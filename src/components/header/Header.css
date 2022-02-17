@@ -1,0 +1,16 @@
+.headerContenedor{
+    width: 100%;
+    padding: 25px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.headerContenedor .imgLogo{
+    margin-right: 15px;
+}
+
+.headerContenedor .imgLogo a img{  
+    width: 120px;
+    border-radius: 50%;
+}
