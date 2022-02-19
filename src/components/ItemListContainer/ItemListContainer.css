@@ -1,0 +1,21 @@
+.txtMensaje-ilc {
+    font-style: italic;
+    font-size: 22px;
+    color: black;
+    animation-duration: 8s;
+    animation-name: animarH2;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes animarH2 {
+    from {
+      margin-left: 50%;
+      width: 300%
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

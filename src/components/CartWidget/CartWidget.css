@@ -1,0 +1,10 @@
+.carritoCompraIco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carritoCompraIco img {
+    width: 30px;
+}

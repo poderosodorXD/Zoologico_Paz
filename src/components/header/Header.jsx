@@ -1,5 +1,5 @@
 import '../header/Header.css'
-import Navegacion from '../NavBar/NavBar'
+import NavBar from '../NavBar/NavBar'
 
 const Header = () => {
 
@@ -10,7 +10,7 @@ const Header = () => {
                     <img src="img/LOGO.jpg" alt="Logo Zoologico" />
                 </a>
             </div>
-            <Navegacion />
+            <NavBar /> 
         </header>
     )
 }

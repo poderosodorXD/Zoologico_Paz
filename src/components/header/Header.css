@@ -1,9 +1,11 @@
 .headerContenedor{
     width: 100%;
     padding: 25px;
-    background-color: black;
+    background: rgb(75,171,80);
+    background: linear-gradient(0deg, rgba(75,171,80,1) 7%, rgba(253,187,45,1) 100%);
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .headerContenedor .imgLogo{

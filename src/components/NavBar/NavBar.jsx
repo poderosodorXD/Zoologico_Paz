@@ -1,3 +1,4 @@
+import CartWidget from '../CartWidget/CartWidget';
 import '../NavBar/NavBar.css'
 
 const ListaMenu = [
@@ -24,24 +25,28 @@ const ListaMenu = [
     }
 ];
 
-const Navegacion = () => {
+const NavBar = () => {
 
     return (
         <nav className='navegaContenedor'>
-            {
-                ListaMenu.map((x, i) => {
-                    return (
-                        <a href="#" key={i}>{x.nombre}</a>
-                    )
-                })
-            }
-            {/* <a href="#">Home</a>
-            <a href="#">Exhibiciones</a>
-            <a href="#">Acuario</a>
-            <a href="#">Noticias</a>
-            <a href="#">Tienda</a> */}
+            <div className='listaMenu-nc'>
+                {
+                    ListaMenu.map((x, i) => {
+                        return (
+                            <a href="/" key={i}>{x.nombre}</a>
+                        )
+                    })
+                }
+            </div>
+
+            <div className='boxCarritoSesion'>
+                <CartWidget />
+                <div className='loginContenedor'>
+                    <p className='iniciarSesText'>Iniciar Sesión</p>
+                </div>
+            </div>
         </nav>
     )
 }
 
-export default Navegacion
+export default NavBar

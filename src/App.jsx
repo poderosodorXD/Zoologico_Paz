@@ -1,13 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/header/Header';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() { //componente
+
   
   return (
     <div className='contenedorPrincipal'>
       <Header />
-      <h2>Próximas novedades</h2>
+
+      <ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'}/>
+
     </div>
   );
 }
