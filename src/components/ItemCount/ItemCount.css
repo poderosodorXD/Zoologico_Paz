@@ -1,0 +1,122 @@
+.itemProducto{
+    width: 400px;
+    background-color: #8fb142;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.contenedorCarrito{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 35px;
+}
+
+.contenedorCarrito .restarCantidad{
+    color: white;
+    font-size: 16px;
+    background-color: #167766;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contenedorCarrito .restarCantidad:active{
+    transform: scale(0.9);
+}
+
+.contenedorCarrito .restarCantidad::before{
+    content: ' ';
+    width: 10px;
+    height: 3px;
+    position: absolute;
+    background-color: white;
+}
+
+.contenedorCarrito .txtCantidad{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.contenedorCarrito .aumentarCantidad{
+    color: white;
+    font-size: 16px;
+    background-color: #167766;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contenedorCarrito .aumentarCantidad:active{
+    transform: scale(0.9);
+}
+
+.contenedorCarrito .aumentarCantidad::before{
+    content: ' ';
+    width: 10px;
+    height: 3px;
+    position: absolute;
+    background-color: white;
+}
+.contenedorCarrito .aumentarCantidad::after{
+    content: ' ';
+    width: 3px;
+    height: 10px;
+    position: absolute;
+    background-color: white;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    width: calc(100% - 35px);
+    gap: 5px;
+    padding: 0 5px;
+}
+
+.infoItem .txtTituloProducto{
+    color: white;
+    font-size: clamp(14px,1.56vw,16px) ;
+    margin: 0;
+}
+
+ .infoItem .infoItem2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.infoItem .infoItem2 .imgProducto{
+    width: 175px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.infoItem .infoItem2 button{
+    border: 0;
+    background-color: #167766;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.infoItem .infoItem2 button:active{
+    transform: scale(0.9);
+}
