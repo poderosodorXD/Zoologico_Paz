@@ -1,0 +1,11 @@
+.contenedorListaProductos {
+    width: 100%;
+    max-width: 1500px;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-bottom: 75px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill,minmax(min(100%,300px),1fr));
+}

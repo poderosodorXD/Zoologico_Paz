@@ -2,7 +2,7 @@ import React from 'react';
 import '../ItemCount/ItemCount.css';
 import { useState } from 'react'
 
-const ItemCount = ({ contador, stock , nombreProducto}) => {
+const ItemCount = ({ contador, stock }) => {
 
     const [count, setContador] = useState(contador)
 
@@ -26,11 +26,7 @@ const ItemCount = ({ contador, stock , nombreProducto}) => {
                 <span className='aumentarCantidad' onClick={() => aumentaItem()}></span>
             </div>
             <div className='infoItem'>
-                <p className='txtTituloProducto'>{nombreProducto}</p>
-                <div className='infoItem2'>
-                    <img className='imgProducto' src="img/GorroZoologico.jpg" alt="Gorro Zoologico" />
-                    <button onClick={() => onAdd(count)}>Agregar al carrito</button>
-                </div>
+                <button onClick={() => onAdd(count)}>Agregar al carrito</button>
             </div>
         </div>
     );
