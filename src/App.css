@@ -1,8 +1,9 @@
-.contenedorPrincipal{
+.contenedorPrincipal{ 
   display: flex;
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
   overflow-x: hidden;
 }
 
