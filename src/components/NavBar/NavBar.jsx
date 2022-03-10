@@ -1,27 +1,22 @@
+import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CartWidget';
 import '../NavBar/NavBar.css'
 
 const ListaMenu = [
     {
         "id": "1",
-        "nombre": "Home"
+        "nombre": "Home",
+        "nombrePage": ""
     },
     {
         "id": "2",
-        "nombre": "Exhibiciones"
-    }
-    ,
+        "nombre": "Exhibiciones",
+        "nombrePage": "exhibiciones"
+    },
     {
         "id": "3",
-        "nombre": "Acuario"
-    },
-    {
-        "id": "4",
-        "nombre": "Noticias"
-    },
-    {
-        "id": "5",
-        "nombre": "Tienda"
+        "nombre": "Tienda",
+        "nombrePage": "tienda"
     }
 ];
 
@@ -33,7 +28,9 @@ const NavBar = () => {
                 {
                     ListaMenu.map((x, i) => {
                         return (
-                            <a href="/" key={i}>{x.nombre}</a>
+                            <NavLink to={`${x.nombrePage}`} key={x.id} >
+                                {x.nombre}
+                            </NavLink>
                         )
                     })
                 }

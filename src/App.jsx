@@ -1,3 +1,4 @@
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
@@ -7,12 +8,22 @@ function App() { //componente
 
   return (
     <div className='contenedorPrincipal'>
-      <Header />
+      <BrowserRouter>
+        <Header />
 
-      <ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'} />
+        <Routes>
+          <Route path='/tienda/detalle/:detalleId' element={<ItemDetailContainer />} />
+          <Route path='/' element={<h1>Home</h1>} />{/*POR REALIZAR */}
+          <Route path='/exhibiciones' element={<h1>Exhibiciones</h1>} /> {/*POR REALIZAR */}
 
-      <ItemDetailContainer />
+          <Route path='/tienda/:categoriaId' element={<ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'} />} />
+          <Route path='/tienda' element={<ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'} />} />
 
+
+          <Route path='/*' element={<Navigate to={'/'} replace />} />
+
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

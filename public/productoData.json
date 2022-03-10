@@ -1,18 +1,32 @@
 {
     "productosArray": [
-        { "id": 1, "imagen": "img/GorroZoologico.jpg", "descripcion": "1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 1", "stock": 15, "precio": 2
+        { "id": "1", "imagen": "/img/GorroZoologico.jpg", "descripcion": "1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 1", "stock": 15, "precio": 2, "categoria":"gorros"
         },
-        { "id": 2, "imagen": "img/GorroZoologico.jpg", "descripcion": "2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 2", "stock": 30, "precio": 5
+        { "id": "2", "imagen": "/img/GorroZoologico.jpg", "descripcion": "2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 2", "stock": 30, "precio": 5, "categoria":"gorros"
         },
-        { "id": 3, "imagen": "img/GorroZoologico.jpg", "descripcion": "3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 3", "stock": 5, "precio": 8
+        { "id": "3", "imagen": "/img/GorroZoologico.jpg", "descripcion": "3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 3", "stock": 5, "precio": 8, "categoria":"gorros"
         },
-        { "id": 4, "imagen": "img/GorroZoologico.jpg", "descripcion": "4 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 4", "stock": 10, "precio": 7
+        { "id": "4", "imagen": "/img/GorroZoologico.jpg", "descripcion": "4 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 4", "stock": 10, "precio": 7, "categoria":"gorros"
         },
-        { "id": 5, "imagen": "img/GorroZoologico.jpg", "descripcion": "5 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 5", "stock": 8, "precio": 9
+        { "id": "5", "imagen": "/img/GorroZoologico.jpg", "descripcion": "5 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 5", "stock": 8, "precio": 9, "categoria":"gorros"
         },
-        { "id": 6, "imagen": "img/GorroZoologico.jpg", "descripcion": "6 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 6", "stock": 11, "precio": 11
+        { "id": "6", "imagen": "/img/GorroZoologico.jpg", "descripcion": "6 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 6", "stock": 11, "precio": 11, "categoria":"gorros"
         },
-        { "id": 7, "imagen": "img/GorroZoologico.jpg", "descripcion": "7 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 7", "stock": 20, "precio": 6
+        { "id": "7", "imagen": "/img/GorroZoologico.jpg", "descripcion": "7 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Gorro Zoologico 7", "stock": 20, "precio": 6, "categoria":"gorros"
+        },
+        { "id": "8", "imagen": "/img/polo.jpg", "descripcion": "1 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 1", "stock": 15, "precio": 2, "categoria":"polos"
+        },
+        { "id": "9", "imagen": "/img/polo.jpg", "descripcion": "2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 2", "stock": 30, "precio": 5, "categoria":"polos"
+        },
+        { "id": "10", "imagen": "/img/polo.jpg", "descripcion": "3 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 3", "stock": 5, "precio": 8, "categoria":"polos"
+        },
+        { "id": "11", "imagen": "/img/polo.jpg", "descripcion": "4 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 4", "stock": 10, "precio": 7, "categoria":"polos"
+        },
+        { "id": "12", "imagen": "/img/polo.jpg", "descripcion": "5 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 5", "stock": 8, "precio": 9, "categoria":"polos"
+        },
+        { "id": "13", "imagen": "/img/polo.jpg", "descripcion": "6 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 6", "stock": 11, "precio": 11, "categoria":"polos"
+        },
+        { "id": "14", "imagen": "/img/polo.jpg", "descripcion": "7 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quae atque assumenda iure minus quam dolorem maiores voluptatem aperiam ullam tempora saepe, mollitia vel placeat quos alias id, deserunt dolore.", "nombre": "Polo Zoologico 7", "stock": 20, "precio": 6, "categoria":"polos"
         }
     ]
 }
