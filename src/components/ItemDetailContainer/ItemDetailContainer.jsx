@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         montarDetalle(detalleId); 
-    }, [])
+    }, [detalleId])
 
     return (
         <div className='contenedorDetalle'>

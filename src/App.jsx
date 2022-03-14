@@ -18,7 +18,8 @@ function App() { //componente
 
           <Route path='/tienda/:categoriaId' element={<ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'} />} />
           <Route path='/tienda' element={<ItemListContainer mensaje={'Próximamente novedades de nuestro catálogo.'} />} />
-
+          
+          <Route path='/cart' element={<h1>Cart</h1>} />
 
           <Route path='/*' element={<Navigate to={'/'} replace />} />
 

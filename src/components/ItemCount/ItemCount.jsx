@@ -2,7 +2,7 @@ import React from 'react';
 import '../ItemCount/ItemCount.css';
 import { useState } from 'react'
 
-const ItemCount = ({ contador, stock }) => {
+const ItemCount = ({ contador, stock, onAdd }) => {
 
     const [count, setContador] = useState(contador)
 
@@ -12,12 +12,8 @@ const ItemCount = ({ contador, stock }) => {
 
     const descuentaItem = () => {
         count <= 1 ? console.log('Contador no puede ser menor a 1') : setContador(count - 1)
-    }
-
-    const onAdd = (numero) => {
-        console.log(`La cantidad de productos adquiridos es: ${numero}`);
-    }
-
+    } 
+    
     return (
         <div className='itemProducto'>
             <div className='contenedorCarrito'>
