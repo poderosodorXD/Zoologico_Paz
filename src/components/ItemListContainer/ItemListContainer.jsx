@@ -19,7 +19,7 @@ const ItemListContainer = ({ mensaje }) => {
             }).then((data) => {
                 setProductosList(data.filter(val => val.categoria === categoriaId))
             }).catch(error => console.log(error))
-                .finally(() => { console.log('finaliza la llamada API getListaProductos con 2s'); setLoaging(false) }) 
+                .finally(() => { setLoaging(false) })
         } else {
             setLoaging(true)
             getListaProductosHome().then((respuesta) => {
@@ -27,10 +27,10 @@ const ItemListContainer = ({ mensaje }) => {
             }).then((data) => {
                 setProductosList(data)
             }).catch(error => console.log(error))
-                .finally(() => { console.log('finaliza la llamada API getListaProductos con 2s'); setLoaging(false) })
+                .finally(() => { setLoaging(false) })
         }
     }, [categoriaId])
- 
+
     return (
         <>
             <h2 className='txtMensaje-ilc'>{mensaje}</h2>

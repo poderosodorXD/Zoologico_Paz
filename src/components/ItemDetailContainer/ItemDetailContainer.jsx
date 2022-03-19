@@ -17,11 +17,11 @@ const ItemDetailContainer = () => {
         })
             .then((data) => { setProductoDet(data) })
             .catch(error => console.log(error))
-            .finally(() => { console.log('finaliza la llamada api get detalle 2s'); setLoading(false); })
+            .finally(() => { setLoading(false); })
     }
 
     useEffect(() => {
-        montarDetalle(detalleId); 
+        montarDetalle(detalleId);
     }, [detalleId])
 
     return (

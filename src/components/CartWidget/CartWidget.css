@@ -1,3 +1,7 @@
+.linkCartEstilo{
+    text-decoration: none;
+}
+
 .carritoCompraIco {
     display: flex;
     align-items: center;
@@ -7,4 +11,13 @@
 
 .carritoCompraIco img {
     width: 30px;
+}
+
+.candidadProductos {
+    color: red;
+    font-size: 27px;
+    margin: 0;
+    margin-left: 5px;
+    border: 0; 
+    font-family: monospace;
 }

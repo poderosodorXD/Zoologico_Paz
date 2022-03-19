@@ -33,7 +33,7 @@ export const getListaProductosHome = async () => {
             } catch (error) {
                 reject(error)
             }
-        }, 2000);
+        }, 300);
     })
     return await promise;
 } 
@@ -50,7 +50,7 @@ export const getDetalle = async (idDetalle) => {
             } catch (error) {
                 reject(error)
             }
-        }, 2000);
+        }, 300);
     });
     return await promise;
 }
