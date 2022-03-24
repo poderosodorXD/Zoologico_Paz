@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { getListaProductosHome } from '../Helpers/getAPI';
+import { getListaProductosHome, getListaProductosHome2 } from '../Helpers/getAPI';
 import ItemList from '../ItemList/ItemList';
 import '../ItemListContainer/ItemListContainer.css'
 
@@ -10,25 +10,36 @@ const ItemListContainer = ({ mensaje }) => {
     const [loading, setLoaging] = useState(true);
     const { categoriaId } = useParams();
 
+    // useEffect(() => {
+
+    //     if (categoriaId) {
+    //         setLoaging(true)
+    //         getListaProductosHome().then((respuesta) => {
+    //             return respuesta;
+    //         }).then((data) => {
+    //             setProductosList(data.filter(val => val.categoria === categoriaId))
+    //         }).catch(error => console.log(error))
+    //             .finally(() => { setLoaging(false) })
+    //     } else {
+    //         setLoaging(true)
+    //         getListaProductosHome().then((respuesta) => {
+    //             return respuesta;
+    //         }).then((data) => {
+    //             setProductosList(data)
+    //         }).catch(error => console.log(error))
+    //             .finally(() => { setLoaging(false) })
+    //     }
+    // }, [categoriaId])
+
     useEffect(() => {
 
-        if (categoriaId) {
-            setLoaging(true)
-            getListaProductosHome().then((respuesta) => {
-                return respuesta;
-            }).then((data) => {
-                setProductosList(data.filter(val => val.categoria === categoriaId))
-            }).catch(error => console.log(error))
-                .finally(() => { setLoaging(false) })
-        } else {
-            setLoaging(true)
-            getListaProductosHome().then((respuesta) => {
-                return respuesta;
-            }).then((data) => {
-                setProductosList(data)
-            }).catch(error => console.log(error))
-                .finally(() => { setLoaging(false) })
-        }
+        getListaProductosHome2(categoriaId === undefined ? 0 : categoriaId).then((respuesta) => {
+            return respuesta;
+        }).then((data) => {
+            setProductosList(data)
+        }).catch(error => console.log(error))
+            .finally(() => { setLoaging(false) })
+
     }, [categoriaId])
 
     return (
