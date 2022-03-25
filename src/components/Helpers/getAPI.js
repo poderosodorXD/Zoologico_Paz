@@ -1,4 +1,4 @@
-import { getFirestore, doc, getDoc, collection, getDocs, query, where, onSnapshot } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, where, onSnapshot, addDoc, documentId, writeBatch } from 'firebase/firestore'
 
 export const productosArray = [
     { id: 1, imagen: '/img/GorroZoologico.jpg', descripcion: 'Hola soy descripción 1', nombre: 'Gorro Zoologico 1', stock: 15, precio: 2 },
@@ -93,6 +93,56 @@ export const getDetalle2 = async (id) => {
                 getDoc(queryDb).then((data) => {
                     resolve({ id: data.id, ...data.data() })
                 })
+            })()
+        } catch (error) {
+            reject(error)
+        }
+    });
+    return await promise;
+}
+
+
+export const addOrden = async (ordenar) => {
+    let promise = new Promise((resolve, reject) => {
+        try {
+            (async () => {
+                const db = getFirestore();
+                const queryCollection = await collection(db, 'orders')
+                await addDoc(queryCollection, ordenar)
+                    .then(rest => resolve(rest))
+            })()
+        } catch (error) {
+            reject(error)
+        }
+    });
+    return await promise;
+}
+
+export const updateStock = async (cartList) => {
+    let promise = new Promise((resolve, reject) => {
+        try {
+            (async () => {
+                const db = getFirestore();
+                const queryCollection = await collection(db, 'items')
+
+                const queryCollectionStock = await query(
+                    queryCollection,
+                    where(documentId(), 'in', cartList.map(item => item.id))
+                )
+
+                const batch = writeBatch(db)
+
+                await getDocs(queryCollectionStock)
+                    .then(
+                        resp => resp.docs.forEach(element => {
+                            batch.update(element.ref, {
+                                stock: element.data().stock - cartList.find(item => item.id === element.id).cantidad
+                            })
+                        })
+                    )
+
+                batch.commit()
+                resolve('Stock actualizado')
             })()
         } catch (error) {
             reject(error)
