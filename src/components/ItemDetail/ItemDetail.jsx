@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCartContext } from '../../context/cartContext';
@@ -10,15 +9,15 @@ const ItemDetail = ({ data }) => {
     const [cambiaBoton, setCambiaBoton] = useState(0);
 
     const { agregarCart } = useCartContext();
-    
+
 
     const onAdd = (numero) => {
         console.log(`La cantidad de productos adquiridos es: ${numero}`);
         setCambiaBoton(numero)
-        agregarCart({...data, cantidad: numero }) 
+        agregarCart({ ...data, cantidad: numero })
     }
 
-    
+
     return (
         <div className='boxItemDet'>
             <div className='imgDet'>
@@ -31,9 +30,15 @@ const ItemDetail = ({ data }) => {
                 <div className='contadorDetBox'>
                     {
                         cambiaBoton === 0 ? <ItemCount contador={1} stock={stock} onAdd={onAdd} />
-                            : <Link to={'/cart'}>
-                                <button className='btnLinkCart'>Terminar mi compra</button>
-                            </Link>
+                            : <>
+                                <Link to={'/cart'}>
+                                    <button className='btnLinkCart'>Terminar mi compra</button>
+                                </Link> 
+                                <Link to={'/tienda'}>
+                                    <button className='btnLinkCart'>Volver a la Tienda</button>
+                                </Link>
+                            </>
+
                     }
                 </div>
             </div>

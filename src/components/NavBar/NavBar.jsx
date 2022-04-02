@@ -6,17 +6,12 @@ const ListaMenu = [
     {
         "id": "1",
         "nombre": "Home",
-        "nombrePage": ""
+        "nombrePagina": ""
     },
     {
         "id": "2",
-        "nombre": "Exhibiciones",
-        "nombrePage": "exhibiciones"
-    },
-    {
-        "id": "3",
         "nombre": "Tienda",
-        "nombrePage": "tienda"
+        "nombrePagina": "tienda"
     }
 ];
 
@@ -28,7 +23,7 @@ const NavBar = () => {
                 {
                     ListaMenu.map((x, i) => {
                         return (
-                            <NavLink to={`${x.nombrePage}`} key={x.id} >
+                            <NavLink to={`${x.nombrePagina}`} key={x.id} >
                                 {x.nombre}
                             </NavLink>
                         )
@@ -37,10 +32,7 @@ const NavBar = () => {
             </div>
 
             <div className='boxCarritoSesion'>
-                <CartWidget />
-                <div className='loginContenedor'>
-                    <p className='iniciarSesText'>Iniciar Sesión</p>
-                </div>
+                <CartWidget /> 
             </div>
         </nav>
     )

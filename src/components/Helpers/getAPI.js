@@ -1,4 +1,4 @@
-import { getFirestore, doc, getDoc, collection, getDocs, query, where, onSnapshot, addDoc, documentId, writeBatch } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, where, addDoc, documentId, writeBatch } from 'firebase/firestore'
 
 export const productosArray = [
     { id: 1, imagen: '/img/GorroZoologico.jpg', descripcion: 'Hola soy descripción 1', nombre: 'Gorro Zoologico 1', stock: 15, precio: 2 },
@@ -45,27 +45,21 @@ export const getListaProductosHome2 = async (categoria) => {
         try {
             (async () => {
                 const db = getFirestore()
-                if (categoria === 0) {
-                    const queryColection = await collection(db, 'items')
-                    getDocs(queryColection)
-                        .then(data => {
-                            resolve(data.docs.map(data => ({ id: data.id, ...data.data() })))
-                        })
-                } else {
-                    const queryColection = await collection(db, 'items')
-                    const queryFilter = await query(queryColection, where('categoria', '==', categoria))
-                    getDocs(queryFilter)
-                        .then(data => {
-                            resolve(data.docs.map(data => ({ id: data.id, ...data.data() })))
-                        })
-                }
+                const queryColection = await collection(db, 'items')
+
+                const queryFilter = await query(queryColection, where('categoria', '==', categoria))
+
+                getDocs(categoria === 0 ? queryColection : queryFilter)
+                    .then(data => {
+                        resolve(data.docs.map(data => ({ id: data.id, ...data.data() })))
+                    })
             })()
         } catch (error) {
             reject(error)
         }
     });
     return await promise;
-}
+} 
 
 export const getDetalle = async (idDetalle) => {
     let promise = new Promise((resolve, reject) => {
@@ -102,7 +96,7 @@ export const getDetalle2 = async (id) => {
 }
 
 
-export const addOrden = async (ordenar) => {
+export const agregarOrden = async (ordenar) => {
     let promise = new Promise((resolve, reject) => {
         try {
             (async () => {
@@ -118,7 +112,7 @@ export const addOrden = async (ordenar) => {
     return await promise;
 }
 
-export const updateStock = async (cartList) => {
+export const actualizaStock = async (cartList) => {
     let promise = new Promise((resolve, reject) => {
         try {
             (async () => {

@@ -24,13 +24,6 @@ function CartContextProvider({ children }) {
 
             cartList[index] = {
                 ...cartList[index],
-                // categoria: item.categoria,
-                // descripcion: item.descripcion,
-                // id: item.id,
-                // imagen: item.imagen,
-                // nombre: item.nombre,
-                // precio: item.precio,
-                // stock: item.stock,
                 cantidad: item.cantidad
             };
             candidadProductos()

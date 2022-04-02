@@ -1,72 +1,96 @@
 import { useCartContext } from '../../context/cartContext';
-import { addOrden, updateStock } from '../Helpers/getAPI';
+import { agregarOrden, actualizaStock } from '../Helpers/getAPI';
 import { useState } from 'react'
+import FormCart from './FormCart';
+import ItemCart from './ItemCart';
+import { validateForm } from '../Helpers/validaciones';
+import './Cart.css'
 
 const Cart = () => {
 
     const { cartList, eliminarListaCart, eliminaItemCart, totalPago } = useCartContext()
 
-    const [compraInfo, setCompraInfo] = useState(0);
+    const [compraInfo, setCompraInfo] = useState(0)
+    const [IdCompra, setIdCompra] = useState(0)
 
-    console.log(cartList)
+    const [formDatos, setFormDatos] = useState({ nombre: "", celular: "", email: "" })
 
+    const [errors, setErrors] = useState({})
 
-    const OrdenarPedido = () => {
-        let ordenar =
-        {
-            buyer: { nombre: 'Juan', phone: '965153905', email: 'juan.paz.uch@gmail.com' },
-            totalPago
-        };
-        ordenar.items = cartList.map(item => ({ id: item.id, nombre: item.nombre, precio: (item.precio * item.cantidad) }));
+    const OrdenarPedido = async (e) => {
+        e.preventDefault()
 
-        console.log('hola', ordenar);
+        setErrors(validateForm(formDatos));
 
-        addOrden(ordenar)
-            .then(rest => console.log(`Tu id de compra es: ${rest.id}`))
-            .catch(error => console.error(error))
-            .finally(() => console.log('Termino su compra.'))
+        if (Object.keys(errors).length === 0
+            && document.getElementById("nombre").value !== ''
+            && document.getElementById("celular").value !== ''
+            && document.getElementById("email").value !== '') {
 
-        updateStock(cartList)
-            .then(rest => console.log(rest))
+            let nuevoFormDatos = {}
+            nuevoFormDatos.nombre = formDatos.nombre;
+            nuevoFormDatos.celular = formDatos.celular;
+            nuevoFormDatos.email = formDatos.email;
 
-        eliminarListaCart()
-        setCompraInfo(1)
+            let ordenar =
+            {
+                buyer: nuevoFormDatos,
+                totalPago
+            };
+            ordenar.items = cartList.map(item => ({ id: item.id, nombre: item.nombre, precio: (item.precio * item.cantidad) }))
+
+            await agregarOrden(ordenar)
+                .then(rest => (setIdCompra(rest.id)))
+                .catch(error => console.error(error))
+                .finally(() => setCompraInfo(1))
+
+            await actualizaStock(cartList)
+                .then(rest => console.log(rest))
+
+            eliminarListaCart()
+            setFormDatos({ nombre: "", celular: "", email: "" })
+        }
+    }
+
+    const cambiosInput = (e) => {
+        const { name, value } = e.target;
+        setFormDatos({
+            ...formDatos,
+            [name]: value
+        })
     };
 
+    const cambioFueraFoco = (e) => {
+        cambiosInput(e);
+        setErrors(validateForm(formDatos));
+    };
 
     return (
-        <>
-            <div>
+        <div className='contenidoCarritoCompra'>
+            <div className='miCompraContenido'>
                 {
-                    cartList.length > 0 ?
-                        cartList.map((data, i) => {
-                            return (
-                                <div key={`${data.id}${i}`}>
-                                    <li>{data.nombre} Precio: {data.precio} Cantidad: {data.cantidad}
-                                        <button onClick={() => { console.log(`Mi Id es: ${data.id}`); eliminaItemCart(data.id) }}>Eliminar</button>
-                                    </li>
-                                </div>
-                            )
-                        }) : compraInfo === 1 ? <h1>Compra Realizada.</h1>
+                    cartList.length > 0 ? <>
+                        <div className='imprimeListaCarrito'>
+                            {cartList.map((data, i) => <ItemCart key={`${data.id}${i}`} data={data} eliminaItemCart={eliminaItemCart} />)}
+                        </div>
+                        <p className='cantidadTotalEstilo'> Candidad Total a pagar: <label>${totalPago}</label></p>
+                        <button className='limpiarCompraEstilo' onClick={eliminarListaCart}>Eliminar Compra</button>
+                    </>
+                        : compraInfo === 1 ? <h1>Compra Realizada, su ID de compra es: {IdCompra !== 0 && IdCompra}</h1>
                             : <h1>No ha realizado ninguna compra.</h1>
                 }
             </div>
+
             {
                 cartList.length > 0 &&
-                <div>
-                    Candidad Total a pagar: ${totalPago}
+                <div className='contenedorFormulario'>
+                    <p className='tituloFormulario'>¡Ordena tu compra ya!</p>
+                    <FormCart cambiosInput={cambiosInput} cambioFueraFoco={cambioFueraFoco} formDatos={formDatos} errors={errors} OrdenarPedido={OrdenarPedido} />
                 </div>
             }
 
-            {
-                cartList.length > 0 && <>
-                    <button onClick={eliminarListaCart}>Eliminar Compra</button>
-                    <button onClick={OrdenarPedido}>Ordenar Pedido</button>
-                </>
-            }
+        </div>
 
-
-        </>
     );
 };
 
