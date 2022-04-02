@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Zoológico Paz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Proyecto elaborado con fin de generar ganancias a cualquier zoológico del mundo, con ventas de productos como, por ejemplo: polos, gorras, llaveros, etc. Con ese fin poder mantener los alimentos y las áreas verdes._
 
-## Available Scripts
+## Comenzando 🚀
 
-In the project directory, you can run:
+_Para obtener la fuente del proyecto lo encontramos en el siguiente link de GitHub que tiene acceso a todo el público:_
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+* [Zoológico Paz](https://github.com/poderosodorXD/Zoologico_Paz) - Repositorio del proyecto 
 
-### `npm start`
+### Pre-requisitos 📋
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_Se necesita instalar los siguientes programas_
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+Instalar Note.js para el entorno de ejecución de JavaScript.
+```
+```
+Instalar GitHub para subir el proyecto a un repositorio.
+```
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Instalación 🔧
 
-### `npm run build`
+_Ya descargado el proyecto del repositorio GitHub, se ejecutará las siguientes líneas de código por el cmd o el terminar de Visual Studio Code._
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_1) Instalación global de la biblioteca React.js de JavaScript._
+```
+npm install -g create-react-app
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_2) Instalación de paquetes requeridos para el proyecto._
+```
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Despliegue 📦
 
-### `npm run eject`
+_Por comando ejecutamos:_
+```
+npm run buid
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+_Subimos el compilado del proyecto a la página Netlify._
+* [Netlify](https://www.netlify.com/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Construido con 🛠️
+* [React](https://es.reactjs.org/docs/create-a-new-react-app.html#gatsby-focus-wrapper) - Una biblioteca de JavaScript para construir interfaces de usuario.
+* [React Router](https://reactrouter.com/docs/en/v6/getting-started/installation) - Navegación de rutas.
+* [Firebase](https://firebase.google.com/docs/web/setup?hl=es-419) - Almacenamiento de datos 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Versionado 📌
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Se usa [GitHub](https://github.com/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/poderosodorXD/Zoologico_Paz).
 
-## Learn More
+## Autores ✒️
+* **Juan Alberto Paz FLores** - *Analista Programador* - [JuanPaz](https://github.com/poderosodorXD)
+ 
+## Expresiones de Gratitud 🎁
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Mi proyecto fue pensado para poder ayudar a los zoológicos del mundo 📢🦁
+* Gracias por el interés del proyecto espero que les pueda ayudar en el mundo de React.js 😀
+---
